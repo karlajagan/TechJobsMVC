@@ -1,29 +1,5 @@
 ﻿<h1>@ViewBag.title</h1>
 
-<h3>@ViewBag.jobs.Count Result(s)</h3>
-
-@for (int i = 0; i < ViewBag.jobs.Count; i++)
-{
-    <table class="job-listing">
-
-        @foreach (KeyValuePair<string, string> job in ViewBag.jobs[i])
-        {
-            <tr>
-                <td>@UppercaseFirst(job.Key)</td>
-                <td>@job.Value</td>
-            </tr>
-        }
-    </table>
-}
-
-@functions 
-{
-    public static string UppercaseFirst(string s)
-    {
-        if (string.IsNullOrEmpty(s))
-        {
-            return string.Empty;
-        }
-        return char.ToUpper(s[0]) + s.Substring(1);
-    }
+@{
+    Html.RenderPartial("_DisplayJobs");
 }
