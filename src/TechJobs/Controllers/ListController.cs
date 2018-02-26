@@ -7,19 +7,7 @@ namespace TechJobs.Controllers
 {
     public class ListController : TechJobsController
     {
-        internal static Dictionary<string, string> columnChoices = new Dictionary<string, string>();
-
-        // This is a "static constructor" which can be used
-        // to initialize static members of a class
-        static ListController() 
-        {
-            
-            columnChoices.Add("core competency", "Skill");
-            columnChoices.Add("employer", "Employer");
-            columnChoices.Add("location", "Location");
-            columnChoices.Add("position type", "Position Type");
-            columnChoices.Add("all", "All");
-        }
+        
 
         public IActionResult Index()
         {
